@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 15:11:34 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:13:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,29 @@ typedef struct			s_image
 
 typedef struct			s_pos
 {
+	int			touch;
+	int			wallsens;
 	double		camx;
 	double		camy;
 	double		rayposx;
 	double		rayposy;
+	double		dirx;
+	double		diry;
+	double		planex;
+	double		planey;
+	double		raydirx;
+	double		raydiry;
 	double		posx;
 	double		posy;
+	int			mapx;
+	int			mapy;
+	double		distmurx;
+	double		distmury;
+	double		dist2murx;
+	double		dist2mury;
+	int			etapex;
+	int			etapey;
+	double		longueurdumur;
 }						t_pos;
 
 typedef struct			s_env

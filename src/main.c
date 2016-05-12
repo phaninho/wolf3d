@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:55:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 14:43:19 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:31:48 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int			main(void)
 {
 	static t_env	e;
 
+	e.p.dirx = -1;
+	e.p.dirx = 0;
 	call_f(&e);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:06:19 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/11 17:42:07 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 15:57:20 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_list
 }					t_list;
 
 int					ft_abs(int nb);
+double				ft_p2(double nb);
 double				ft_double_abs(double nb);
 void				ft_swap(int *a, int *b);
 void				ft_tabdel(char ***tab);
