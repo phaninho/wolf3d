@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 16:13:58 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:34:45 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ void		pos_in_map(t_env *e);
 int			get_map(int x, int y);
 int			expose_hook(t_env *e);
 int			key_hook(int keycode, t_env *e);
+void		wall_dist(t_env *e);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 16:30:02 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:40:07 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,12 @@ void		move_pos(t_env *e)
 			e->p.mapy += e->p.etapey;
 			e->p.wallsens = 1;
 		}
+		if (get_map(e->p.mapx, e->p.mapy) > 0)
+		{
+			e->p.touch = 1;
+			printf("%d %d \n",e->p.mapx, e->p.mapy);
+		}
 	}
-	if (get_map(e->p.mapx, e->p.mapy) > 0)
-		e->p.touch = 1;
 }
 
 void		wall_dist(t_env *e)

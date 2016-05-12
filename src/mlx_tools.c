@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 16:00:08 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 16:34:16 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int			expose_hook(t_env *e)
 {
 	clear_image(e);
 	pos_in_map(e);
+	wall_dist(e);
 	mlx_clear_window(e->mlx, e->win);
 	mlx_put_image_to_window(e->mlx, e->win, e->img.i, 0, 0);
 	return (0);
