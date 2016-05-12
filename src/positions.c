@@ -6,13 +6,11 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 16:40:07 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:45:06 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
-#include <stdio.h>
 
 void		move_pos(t_env *e)
 {
@@ -31,11 +29,9 @@ void		move_pos(t_env *e)
 			e->p.wallsens = 1;
 		}
 		if (get_map(e->p.mapx, e->p.mapy) > 0)
-		{
 			e->p.touch = 1;
-			printf("%d %d \n",e->p.mapx, e->p.mapy);
-		}
 	}
+	wall_h(e);
 }
 
 void		wall_dist(t_env *e)
@@ -66,12 +62,10 @@ void		wall_dist(t_env *e)
 
 void		pos_in_map(t_env *e)
 {
-	int		x;
-
-	x = 0;
-	while (x < WIN_X)
+	e->p.x = 0;
+	while (e->p.x < WIN_X)
 	{
-		e->p.camx = 2 * x / WIN_X;
+		e->p.camx = 2 * e->p.x / WIN_X;
 		e->p.rayposx = e->p.posx;
 		e->p.rayposy = e->p.posy;
 		e->p.raydirx = e->p.dirx + e->p.planex * e->p.camx;
@@ -80,6 +74,7 @@ void		pos_in_map(t_env *e)
 		e->p.mapy = (int)e->p.rayposy;
 		e->p.dist2murx = sqrt(1 + ft_p2(e->p.raydiry) / ft_p2(e->p.raydirx));
 		e->p.dist2mury = sqrt(1 + ft_p2(e->p.raydirx) / ft_p2(e->p.raydiry));
-		x++;
+		wall_dist(e);
+		e->p.x++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 16:34:45 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:45:26 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,17 @@ typedef struct			s_image
 	char		*data;
 }						t_image;
 
+typedef struct			s_col
+{
+	unsigned long	r;
+	unsigned long	g;
+	unsigned long	b;
+}						t_col;
+
 typedef struct			s_pos
 {
+	int			x;
 	int			touch;
-	int			wallsens;
 	double		camx;
 	double		camy;
 	double		rayposx;
@@ -57,7 +64,9 @@ typedef struct			s_pos
 	double		dist2mury;
 	int			etapex;
 	int			etapey;
-	double		longueurdumur;
+	int			wallsens;
+	int			wall_high;
+	double		wall_len;
 }						t_pos;
 
 typedef struct			s_env
@@ -66,12 +75,15 @@ typedef struct			s_env
 	void		*win;
 	t_image		img;
 	t_pos		p;
+	t_col		c;
 }						t_env;
 
-void		pos_in_map(t_env *e);
-int			get_map(int x, int y);
-int			expose_hook(t_env *e);
-int			key_hook(int keycode, t_env *e);
-void		wall_dist(t_env *e);
+void			pos_in_map(t_env *e);
+int				get_map(int x, int y);
+int				expose_hook(t_env *e);
+int				key_hook(int keycode, t_env *e);
+void			wall_dist(t_env *e);
+void			image_put_pixel(t_image *i, int x, int y, unsigned long color);
+unsigned long	colorrgb(int r, int g, int b);
 
 #endif
