@@ -44,6 +44,8 @@ int			main(void)
 	e.p.posy = 2;
 	e.p.dirx = -1;
 	e.p.dirx = 0;
+	e.p.planex = 0;
+	e.p.planey = 0.66;
 	call_f(&e);
 	return (0);
 }

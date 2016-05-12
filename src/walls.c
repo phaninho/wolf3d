@@ -61,6 +61,7 @@ void		wall_h(t_env *e)
 		e->p.wall_len = fabs((e->p.mapy - e->p.rayposy + (1 - e->p.etapey) / 2)
 				/ e->p.raydiry);
 	e->p.wall_high = abs((int)(WIN_Y / e->p.wall_len));
+	printf("%0.0f\n", e->p.wall_len);
 	drawstart = -e->p.wall_high / 2 + WIN_Y / 2;
 	if (drawstart < 0)
 		drawstart = 0;

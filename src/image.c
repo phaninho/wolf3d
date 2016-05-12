@@ -11,26 +11,22 @@
 /* ************************************************************************** */
 
 #include "wolf.h"
-
+#include <stdio.h>
 void			verline(int x, int drawstart, int drawend, t_env *e)
 {
-	int		lim;
-	int		dy;
-
-	lim = ft_abs(drawend - drawstart);
-	dy = ft_abs(lim * 2);
 	while (drawstart != drawend)
 	{
-		image_put_pixel(&(e->img), x, drawstart, colorrgb(e->c.r, e->c.g, e->c.b));
+	printf("la\n");
+		image_put_pixel(&(e->img), x, drawstart, 0xFF0000);
 		drawstart < drawend ? drawstart++ : drawstart--;
 	}
-	image_put_pixel(&(e->img), x, drawstart, colorrgb(e->c.r, e->c.g, e->c.b));
+	image_put_pixel(&(e->img), x, drawstart, 0xffff00);
 }
 
 unsigned long	colorrgb(int r, int g, int b)
 {
-	return ((r & 0xff) << 2) + ((g & 0xff) << 8) +
-		((b & 0xff) << 20 );
+	return ((r & 0xff)) + ((g & 0xff)) +
+		((b & 0xff));
 }
 
 void			image_put_pixel(t_image *i, int x, int y, unsigned long color)
