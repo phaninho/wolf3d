@@ -6,7 +6,7 @@
 #    By: stmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/04 14:21:39 by stmartin          #+#    #+#              #
-#    Updated: 2016/05/12 14:06:56 by stmartin         ###   ########.fr        #
+#    Updated: 2016/05/12 15:15:04 by stmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 INC = $(addprefix -I,$(INC_PATH))
 LIB = $(addprefix -L,$(LIB_PATH))
 
-CC = gcc -g
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Ofast
 
 all: lib
