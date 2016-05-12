@@ -6,11 +6,26 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 19:40:29 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 20:20:11 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+void			verline(int x, int drawstart, int drawend, t_env *e)
+{
+	int		lim;
+	int		dy;
+
+	lim = ft_abs(drawend - drawstart);
+	dy = ft_abs(lim * 2);
+	while (drawstart != drawend)
+	{
+		image_put_pixel(&(e->img), x, drawstart, colorrgb(e->c.r, e->c.g, e->c.b));
+		drawstart < drawend ? drawstart++ : drawstart--;
+	}
+	image_put_pixel(&(e->img), x, drawstart, colorrgb(e->c.r, e->c.g, e->c.b));
+}
 
 unsigned long	colorrgb(int r, int g, int b)
 {

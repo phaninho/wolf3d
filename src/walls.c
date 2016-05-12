@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:51:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 19:46:59 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/12 20:20:54 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		wall_h(t_env *e)
 	if (drawend >= WIN_Y)
 		drawend = WIN_Y - 1;
 	wall_color(e, e->p.mapx, e->p.mapy);
-	verline(e->p.x, drawstart, drawend, e->c.r, e->c.g, e->c.b);
+	verline(e->p.x, drawstart, drawend, e);
 	/*image_put_pixel(&(e->img), drawstart, drawend,
 			colorrgb(e->c.r, e->c.g, e->c.b));*/
 }
