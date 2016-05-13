@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 14:22:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 16:19:51 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,9 @@ static void		clear_image(t_env *e)
 
 int			key_hook(int keycode, t_env *e)
 {
-	if (keycode == 13)
-		e->p.my--;
-	else if (keycode == 1)
-		e->p.my++;
-	else if (keycode == 0)
-		e->p.mx--;
-	else if (keycode == 2)
-		e->p.mx++;
-	printf("mx %f my %f\n", e->p.mx, e->p.my);
+	if (keycode == 13 || keycode == 1 || keycode == 0 || keycode == 2)
+		move_init(e, keycode);
+	printf("mx %f my %f\n", e->p.posx, e->p.posy);
 	if (keycode == 53)
 		exit(1);
 	return (0);

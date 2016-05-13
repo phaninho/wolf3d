@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 14:59:46 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 16:18:51 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ typedef struct			s_pos
 {
 	int			x;
 	int			touch;
-	double		mx;
-	double		my;
 	double		camx;
 	double		rayposx;
 	double		rayposy;
@@ -89,5 +87,6 @@ unsigned long	colorrgb(t_env *e, int x, int y);
 void			verline(int x, int drawstart, int drawend, t_env *e);
 void			wall_h(t_env *e);
 void			wall_color(t_env *e, int x, int y);
+void			move_init(t_env *e, int key);
 
 #endif

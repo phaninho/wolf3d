@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 14:23:37 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 15:08:13 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void		pos_in_map(t_env *e)
 	while (e->p.x < WIN_X)
 	{
 		e->p.camx = 2 * e->p.x / WIN_X - 1;
-		e->p.rayposx = e->p.posx + e->p.mx;
-		e->p.rayposy = e->p.posy + e->p.my;
+		e->p.rayposx = e->p.posx;
+		e->p.rayposy = e->p.posy;
 		e->p.raydirx = e->p.dirx + e->p.planex * e->p.camx;
 		e->p.raydiry = e->p.diry + e->p.planey * e->p.camx;
 		e->p.mapx = (int)e->p.rayposx;
