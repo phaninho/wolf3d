@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:51:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 15:00:48 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:37:20 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void		wall_h(t_env *e)
 	drawend = e->p.wall_high / 2 + WIN_Y / 2;
 	if (drawend >= WIN_Y)
 		drawend = WIN_Y - 1;
+	draw_sky_and_floor(e, e->p.x, drawstart, drawend);
 	wall_color(e, e->p.mapx, e->p.mapy);
 	verline(e->p.x, drawstart, drawend, e);
 	/*image_put_pixel(&(e->img), drawstart, drawend,

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 16:18:51 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:31:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void			verline(int x, int drawstart, int drawend, t_env *e);
 void			wall_h(t_env *e);
 void			wall_color(t_env *e, int x, int y);
 void			move_init(t_env *e, int key);
+void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
 
 #endif

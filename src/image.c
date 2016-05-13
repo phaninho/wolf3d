@@ -6,12 +6,28 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 15:02:44 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:33:50 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 #include <stdio.h>
+
+void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend)
+{
+	//int		y;
+
+	//y = 0;
+	//while (y < drawstart)
+	//{
+		e->c.r = 0x87cefa;
+		verline(x,0, drawstart, e);
+		e->c.r = 0x8fbc8f;
+		verline(x,drawend, WIN_Y, e);
+	//	y++;
+	//}
+}
+
 void			verline(int x, int drawstart, int drawend, t_env *e)
 {
 	if (x == WIN_X)
