@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 19:45:38 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 20:14:30 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define WIN_Y 1000.0 / 16 * 9
 # define MAP_X 8
 # define MAP_Y 8
+# define DESTROYNOTIFY 17
+# define STRUCT_NOT_MASK (1L<<17)
 
 typedef struct			s_image
 {
@@ -89,5 +91,6 @@ void			wall_h(t_env *e);
 void			wall_color(t_env *e, int x, int y);
 void			move_init(t_env *e, int key);
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
+int				destroy_win(t_env *e);
 
 #endif

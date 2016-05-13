@@ -6,13 +6,20 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 19:47:38 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 20:14:42 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
 #include <stdio.h>
+
+int			destroy_win(t_env *e)
+{
+	(void)e;
+	exit(1);
+}
+
 static void		clear_image(t_env *e)
 {
 	int		y;

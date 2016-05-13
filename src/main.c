@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:55:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 17:30:52 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 20:15:18 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void		call_f(t_env *e)
 	e->img.i = mlx_new_image(e->mlx, WIN_X, WIN_Y);
 	mlx_expose_hook(e->win, expose_hook, e);
 	mlx_hook(e->win, 2, 1L << 0, key_hook, e);
+//	mlx_hook(e->mlx, DESTROYNOTIFY, STRUCT_NOT_MASK, destroy_win, e);
 	e->img.data = mlx_get_data_addr(e->img.i, &(e->img.bpp), &(e->img.szline),
 			&(e->img.endian));
 	mlx_loop(e->mlx);
