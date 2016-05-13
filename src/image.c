@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 20:20:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 15:02:44 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 #include <stdio.h>
 void			verline(int x, int drawstart, int drawend, t_env *e)
 {
+	if (x == WIN_X)
+		return ;
 	while (drawstart != drawend)
 	{
-	printf("la\n");
-		image_put_pixel(&(e->img), x, drawstart, 0xFF0000);
+		image_put_pixel(&(e->img), x, drawstart, e->c.r);
 		drawstart < drawend ? drawstart++ : drawstart--;
 	}
-	image_put_pixel(&(e->img), x, drawstart, 0xffff00);
+	image_put_pixel(&(e->img), x, drawstart, e->c.r);
 }
 
-unsigned long	colorrgb(int r, int g, int b)
+unsigned long	colorrgb(t_env *e, int x, int y)
 {
-	return ((r & 0xff)) + ((g & 0xff)) +
-		((b & 0xff));
+	wall_color(e, x, y);
+	return ((e->c.r + 65536) + (e->c.g + 256) + e->c.b);
 }
 
 void			image_put_pixel(t_image *i, int x, int y, unsigned long color)

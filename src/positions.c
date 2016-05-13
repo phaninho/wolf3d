@@ -6,12 +6,12 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 19:45:06 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:23:37 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
+#include <stdio.h>
 void		move_pos(t_env *e)
 {
 	while (e->p.touch == 0)
@@ -65,11 +65,11 @@ void		pos_in_map(t_env *e)
 	e->p.x = 0;
 	while (e->p.x < WIN_X)
 	{
-		e->p.camx = 2 * e->p.x / WIN_X;
-		e->p.rayposx = e->p.posx;
-		e->p.rayposy = e->p.posy;
+		e->p.camx = 2 * e->p.x / WIN_X - 1;
+		e->p.rayposx = e->p.posx + e->p.mx;
+		e->p.rayposy = e->p.posy + e->p.my;
 		e->p.raydirx = e->p.dirx + e->p.planex * e->p.camx;
-		e->p.raydiry = e->p.diry + e->p.planey * e->p.camy;
+		e->p.raydiry = e->p.diry + e->p.planey * e->p.camx;
 		e->p.mapx = (int)e->p.rayposx;
 		e->p.mapy = (int)e->p.rayposy;
 		e->p.dist2murx = sqrt(1 + ft_p2(e->p.raydiry) / ft_p2(e->p.raydirx));

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/12 20:21:12 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 14:59:46 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <mlx.h>
 # include <stdlib.h>
 
-# define WIN_X 1000
-# define WIN_Y 1000 / 16 * 9
-# define MAP_X 6
-# define MAP_Y 6
+# define WIN_X 1000.0
+# define WIN_Y 1000.0 / 16 * 9
+# define MAP_X 8
+# define MAP_Y 8
 
 typedef struct			s_image
 {
@@ -44,8 +44,9 @@ typedef struct			s_pos
 {
 	int			x;
 	int			touch;
+	double		mx;
+	double		my;
 	double		camx;
-	double		camy;
 	double		rayposx;
 	double		rayposy;
 	double		dirx;
@@ -84,8 +85,9 @@ int				expose_hook(t_env *e);
 int				key_hook(int keycode, t_env *e);
 void			wall_dist(t_env *e);
 void			image_put_pixel(t_image *i, int x, int y, unsigned long color);
-unsigned long	colorrgb(int r, int g, int b);
+unsigned long	colorrgb(t_env *e, int x, int y);
 void			verline(int x, int drawstart, int drawend, t_env *e);
 void			wall_h(t_env *e);
+void			wall_color(t_env *e, int x, int y);
 
 #endif
