@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 19:31:58 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:45:38 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int				get_map(int x, int y);
 int				expose_hook(t_env *e);
 int				key_hook(int keycode, t_env *e);
 void			wall_dist(t_env *e);
-void			image_put_pixel(t_image *i, int x, int y, unsigned long color);
+int				image_put_pixel(t_image *i, int x, int y, unsigned long color);
 unsigned long	colorrgb(t_env *e, int x, int y);
 void			verline(int x, int drawstart, int drawend, t_env *e);
 void			wall_h(t_env *e);

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 19:33:50 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/13 19:46:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void			verline(int x, int drawstart, int drawend, t_env *e)
 		return ;
 	while (drawstart != drawend)
 	{
-		image_put_pixel(&(e->img), x, drawstart, e->c.r);
+		if (!(image_put_pixel(&(e->img), x, drawstart, e->c.r)))
+			break ;
 		drawstart < drawend ? drawstart++ : drawstart--;
 	}
 	image_put_pixel(&(e->img), x, drawstart, e->c.r);
@@ -46,18 +47,24 @@ unsigned long	colorrgb(t_env *e, int x, int y)
 	return ((e->c.r + 65536) + (e->c.g + 256) + e->c.b);
 }
 
-void			image_put_pixel(t_image *i, int x, int y, unsigned long color)
+int				image_put_pixel(t_image *i, int x, int y, unsigned long color)
 {
+	int		pos;
+
+	pos = (x * i->bpp / 8) + (y * i->szline);
+	if (pos < 0 || pos > i->szline * WIN_Y - 1)
+		return (0);
 	if (i->endian)
 	{
-		i->data[(x * i->bpp / 8) + (y * i->szline)] = color / 65536 % 256;
-		i->data[(x * i->bpp / 8) + 1 + (y * i->szline)] = color / 256 % 256;
-		i->data[(x * i->bpp / 8) + 2 + (y * i->szline)] = color % 256;
+		i->data[pos] = color / 65536 % 256;
+		i->data[pos + 1] = color / 256 % 256;
+		i->data[pos + 2] = color % 256;
 	}
 	else
 	{
-		i->data[(x * i->bpp / 8) + 2 + (y * i->szline) ] = color / 65536 % 256;
-		i->data[(x * i->bpp / 8) + 1 + (y * i->szline)] = color / 256 % 256;
-		i->data[(x * i->bpp / 8) + (y * i->szline)] = color % 256;
+		i->data[pos + 2] = color / 65536 % 256;
+		i->data[pos + 1] = color / 256 % 256;
+		i->data[pos] = color % 256;
 	}
+	return (1);
 }
