@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/14 20:05:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/14 20:23:42 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct			s_image
 	int			szline;
 	int			endian;
 	char		*data;
+	int			width;
+	int			height;
 }						t_image;
 
 typedef struct			s_col
@@ -75,6 +77,7 @@ typedef struct			s_env
 	char		**file;
 	void		*mlx;
 	void		*win;
+	t_image		*tex;
 	t_image		img;
 	t_pos		p;
 	t_col		c;
@@ -94,5 +97,6 @@ void			move_init(t_env *e, int key);
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
 int				destroy_win(t_env *e);
 void			init_texture(t_env *e);
+void			texture_error(void);
 
 #endif

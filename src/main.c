@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:55:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/14 18:52:58 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/14 20:10:27 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int			get_map(int x, int y)
 void		call_f(t_env *e)
 {
 	e->mlx = mlx_init();
+	init_texture(e);
 	e->win = mlx_new_window(e->mlx, WIN_X, WIN_Y, "WOLF42");
 	e->img.i = mlx_new_image(e->mlx, WIN_X, WIN_Y);
 	mlx_expose_hook(e->win, expose_hook, e);
