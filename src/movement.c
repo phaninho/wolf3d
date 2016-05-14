@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 15:16:31 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 20:34:35 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/14 19:32:09 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		move_init(t_env *e, int keycode)
 		if (!(get_map((int)e->p.posx, (int)(e->p.posy - e->p.diry * movespeed))))
 			e->p.posy -= e->p.diry * movespeed;
 	}
-	else if (keycode == 0 || keycode == 2)
+	if (keycode == 0 || keycode == 2)
 		rotation(e, keycode, rotspeed);
 	expose_hook(e);
 }
