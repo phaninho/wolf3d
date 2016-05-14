@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 20:14:30 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/14 20:05:11 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ typedef struct			s_pos
 
 typedef struct			s_env
 {
+	char		**file;
 	void		*mlx;
 	void		*win;
 	t_image		img;
@@ -92,5 +93,6 @@ void			wall_color(t_env *e, int x, int y);
 void			move_init(t_env *e, int key);
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
 int				destroy_win(t_env *e);
+void			init_texture(t_env *e);
 
 #endif
