@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/14 20:23:42 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/15 00:12:19 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 # define WIN_Y 1000.0 / 16 * 9
 # define MAP_X 8
 # define MAP_Y 8
+# define TEXWIDTH 64
+# define TEXHEIGHT 64
 # define DESTROYNOTIFY 17
 # define STRUCT_NOT_MASK (1L<<17)
 
@@ -70,6 +72,9 @@ typedef struct			s_pos
 	int			wallsens;
 	int			wall_high;
 	double		wall_len;
+	int			texnum;
+	int			drawstart;
+	int			drawend;
 }						t_pos;
 
 typedef struct			s_env
@@ -88,7 +93,7 @@ int				get_map(int x, int y);
 int				expose_hook(t_env *e);
 int				key_hook(int keycode, t_env *e);
 void			wall_dist(t_env *e);
-int				image_put_pixel(t_image *i, int x, int y, unsigned long color);
+int				image_put_pixel(t_env *e, int x, int y, unsigned long color);
 unsigned long	colorrgb(t_env *e, int x, int y);
 void			verline(int x, int drawstart, int drawend, t_env *e);
 void			wall_h(t_env *e);
@@ -98,5 +103,6 @@ void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
 int				destroy_win(t_env *e);
 void			init_texture(t_env *e);
 void			texture_error(void);
+void		texture_coordxy(t_env *e);
 
 #endif

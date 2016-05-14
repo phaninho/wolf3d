@@ -6,7 +6,7 @@
 #    By: stmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/04 14:21:39 by stmartin          #+#    #+#              #
-#    Updated: 2016/05/14 20:24:36 by stmartin         ###   ########.fr        #
+#    Updated: 2016/05/15 00:13:25 by stmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIB_PATH = ./libft/ ./minilibx_macos/
 FRAMEWORK = -framework OpenGL -framework Appkit
 
 SRC_NAME = main.c positions.c mlx_tools.c walls.c image.c movement.c \
-		   texture.c error.c
+		   texture.c error.c calcul_for_texture.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAME = -lft -lmlx
