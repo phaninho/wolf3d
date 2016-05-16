@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/14 23:33:40 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/16 18:45:46 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ void			verline(int x, int drawstart, int drawend, t_env *e)
 	image_put_pixel(e, x, drawstart, e->c.r);
 }
 
-unsigned long	colorrgb(t_env *e, int x, int y)
-{
-	wall_color(e, x, y);
-	return ((e->c.r + 65536) + (e->c.g + 256) + e->c.b);
-}
+//unsigned long	colorrgb(t_env *e, int x, int y)
+//{
+//	wall_color(e, x, y);
+//	return ((e->c.r + 65536) + (e->c.g + 256) + e->c.b);
+//}
 
 int				image_put_pixel(t_env *e, int x, int y, unsigned long color)
 {

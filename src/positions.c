@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 15:08:13 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/16 18:22:14 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ void		move_pos(t_env *e)
 		if (e->p.distmurx < e->p.distmury)
 		{
 			e->p.distmurx += e->p.dist2murx;
-			e->p.mapx += e->p.etapex;
+			if (e->p.mapx > 0 && e->p.mapx < MAP_X - 1)
+				e->p.mapx += e->p.etapex;
 			e->p.wallsens = 0;
 		}
 		else
 		{
 			e->p.distmury += e->p.dist2mury;
-			e->p.mapy += e->p.etapey;
+			if (e->p.mapy > 0 && e->p.mapy < MAP_Y - 1)
+				e->p.mapy += e->p.etapey;
 			e->p.wallsens = 1;
 		}
 		if (get_map(e->p.mapx, e->p.mapy) > 0)
@@ -65,7 +67,7 @@ void		pos_in_map(t_env *e)
 	e->p.x = 0;
 	while (e->p.x < WIN_X)
 	{
-		e->p.camx = 2 * e->p.x / WIN_X - 1;
+		e->p.camx = 2 * e->p.x / (double)WIN_X - 1;
 		e->p.rayposx = e->p.posx;
 		e->p.rayposy = e->p.posy;
 		e->p.raydirx = e->p.dirx + e->p.planex * e->p.camx;

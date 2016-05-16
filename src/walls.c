@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:51:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/15 00:11:28 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/16 18:04:13 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@ void		wall_color(t_env *e, int x, int y)
 {
 	(void)x;
 	(void)y;
-	texture_coordxy(e);
-	/*if (get_map(x, y) == 1)
+	texture_coordxy(e, x, y);
+/*
+	if (get_map(x, y) == 1)
 		e->c.r = 0xff0000;
 	if (get_map(x, y) == 2)
 		e->c.r = 0x00ff00;
