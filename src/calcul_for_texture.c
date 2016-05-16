@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/14 22:19:27 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/15 00:15:47 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/16 13:26:55 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		texture_coordxy(t_env *e)
 	double	wallx;
 	int		texx;
 
-	e->p.texnum = get_map(e->p.mapx, e->p.mapy) - 1;
+	e->p.texnum = get_map(e->p.mapx, e->p.mapy);
 	if (e->p.wallsens == 0)
 		wallx = e->p.rayposy + e->p.wall_len * e->p.rayposy;
 	else
