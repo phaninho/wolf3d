@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 16:51:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/16 18:04:13 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/17 15:45:04 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void		wall_color(t_env *e, int x, int y)
 		e->c.r = 0x0000ff;
 	if (get_map(x, y) == 4)
 		e->c.r = 0xf0f0f0;
+	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
 	if (get_map(x, y) == 1)
 	{
 		e->c.r = 0xFF;
@@ -78,5 +79,4 @@ void		wall_h(t_env *e)
 		e->p.drawend = WIN_Y - 1;
 	draw_sky_and_floor(e, e->p.x, e->p.drawstart, e->p.drawend);
 	wall_color(e, e->p.mapx, e->p.mapy);
-	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
 }

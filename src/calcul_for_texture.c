@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/14 22:19:27 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/16 19:34:20 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/17 19:12:55 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void		texture_coordy(t_env *e, int texx)
 	{
 		d = y * 256 - WIN_Y * 128 + e->p.wall_high * 128;
 		texy = ((d * TEXHEIGHT) / e->p.wall_high) / 256;
-		e->c.r = e->file[e->p.texnum][TEXHEIGHT * texy + texx];
+		e->c.r = e->tex[e->p.texnum].data[e->tex->height * texy + texx];// chercher par ici
+//		printf("%d\n",texy);
 	//	printf("co %lu\n", e->c.r);
 	//	if (e->p.wallsens == 1)
 	//		e->c.r = (e->c.r >> 1) & 8355711;

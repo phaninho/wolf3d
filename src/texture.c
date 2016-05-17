@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 16:34:31 by qmuntada          #+#    #+#             */
-/*   Updated: 2016/05/16 19:39:43 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/17 17:09:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,22 +88,22 @@ void	init_texture_parser3(t_env *e)
 
 void	init_texture(t_env *e)
 {
-//	int		i;
+	int		i;
 
 	e->tex = malloc(sizeof(t_image) * 63);
 	e->file = malloc(sizeof(char *) * 63);
 	init_texture_parser1(e);
 	init_texture_parser2(e);
 	init_texture_parser3(e);
-//	i = 0;
-//	while (++i < 63)
-//	{
-		e->tex[1].i = mlx_xpm_file_to_image(e->mlx, e->file[1], \
-								&e->tex[1].width, &e->tex[1].height);
-		if (e->tex[1].i == NULL)
+	i = 0;
+	while (++i < 63)
+	{
+		e->tex[i].i = mlx_xpm_file_to_image(e->mlx, e->file[i],
+								&e->tex[i].width, &e->tex[i].height);
+		if (e->tex[i].i == NULL)
 			texture_error();
-		e->tex[1].data = mlx_get_data_addr(e->tex[1].i, \
-				&e->tex[1].bpp, &e->tex[1].szline, \
-				&e->tex[1].endian);
-//	}
+		e->tex[i].data = mlx_get_data_addr(e->tex[i].i,
+				&e->tex[i].bpp, &e->tex[i].szline,
+				&e->tex[i].endian);
+	}
 }
