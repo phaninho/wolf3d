@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 14:53:43 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 18:44:33 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		clear_image(t_env *e)
 	int		y;
 
 	y = 0;
-	while(y <= e->img.szline * WIN_Y)
+	while (y <= e->img.szline * WIN_Y)
 	{
 		e->img.data[y] = 0;
 		y++;

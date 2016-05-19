@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 16:34:31 by qmuntada          #+#    #+#             */
-/*   Updated: 2016/05/19 13:03:02 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 18:37:09 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ void	init_texture_parser3(t_env *e)
 	e->file[61] = "texture/table2.xpm";
 	e->file[62] = "texture/ustens1.xpm";
 }
-
+#include<stdio.h>
 void	init_texture(t_env *e)
 {
 	int		i;
-
+printf("llaa init texture\n");
 	e->tex = malloc(sizeof(t_image) * 63);
 	e->file = malloc(sizeof(char *) * 63);
 	init_texture_parser1(e);

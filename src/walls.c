@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 18:03:56 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 18:08:17 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 19:41:05 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void		wall_color(t_env *e, int x, int y, int ret)
 	//texture_coordxy(e, x, y);
 (void)x;
 (void)y;
-
 	if (ret == 1)
 		e->c.r = 0xff0000;
 	if (ret == 2)
@@ -47,6 +46,7 @@ void		wall_color(t_env *e, int x, int y, int ret)
 	if (ret == 4)
 		e->c.r = 0xf0f0f0;
 	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
+//	texture_coordxy(e, x, y);
 /*	if (get_map(x, y) == 1)
 	{
 		e->c.r = 0xFF;
@@ -73,20 +73,35 @@ void		wall_color(t_env *e, int x, int y, int ret)
 	}
 	e->p.wallsens == 1 ? change_wall_color(e) : 1;*/
 }
+int			give_color(double rdirxy, int t)
+{
+	if (t == 1)
+	{
+		if (rdirxy > 0)
+			return (1);
+		return (2);
+	}
+	if (t == 2)
+		if (rdirxy > 0)
+			return (3);
+	return (4);
+}
 
 void		wall_h(t_env *e)
-{int ret;
+{
+	int ret;
+
 	if (e->p.wallsens == 0)
 	{
-		e->p.wall_len = ((e->p.mapx - e->p.rayposx + (1 - e->p.etapex) / 2)
+		e->p.wall_len = fabs((e->p.mapx - e->p.rayposx + (1 - e->p.etapex) / 2)
 				/ e->p.raydirx);
-		ret = 1;
+		ret = give_color(e->p.raydirx, 1);
 	}
 	else
 	{
-		e->p.wall_len = ((e->p.mapy - e->p.rayposy + (1 - e->p.etapey) / 2)
+		e->p.wall_len = fabs((e->p.mapy - e->p.rayposy + (1 - e->p.etapey) / 2)
 				/ e->p.raydiry);
-		ret = 2;
+		ret = give_color(e->p.raydiry, 2);
 	}
 	if (e->p.wall_len <= 0.100000)
 		e->p.wall_len += 0.1;
