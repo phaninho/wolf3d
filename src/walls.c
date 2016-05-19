@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 18:03:56 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 19:41:05 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 19:57:22 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@
 void		change_wall_color(t_env *e)
 {
 	e->c.r /= 2;
-	e->c.g /= 2;
-	e->c.b /= 2;
 }
 
 void		wall_color(t_env *e, int x, int y, int ret)
@@ -38,41 +36,17 @@ void		wall_color(t_env *e, int x, int y, int ret)
 (void)x;
 (void)y;
 	if (ret == 1)
-		e->c.r = 0xff0000;
+		e->c.r = 0x006600;
 	if (ret == 2)
-		e->c.r = 0x00ff00;
+		e->c.r = 0x000066;
 	if (ret == 3)
-		e->c.r = 0x0000ff;
+		e->c.r = 0xcccc66;
 	if (ret == 4)
-		e->c.r = 0xf0f0f0;
-	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
+		e->c.r = 0x663300;
 //	texture_coordxy(e, x, y);
-/*	if (get_map(x, y) == 1)
-	{
-		e->c.r = 0xFF;
-		e->c.g = 0x00;
-		e->c.b = 0x00;
-	}
-	else if (get_map(x, y) == 2)
-	{
-		e->c.r = 0x00;
-		e->c.g = 0xFF;
-		e->c.b = 0x00;
-	}
-	else if (get_map(x, y) == 3)
-	{
-		e->c.r = 0x00;
-		e->c.g = 0x00;
-		e->c.b = 0xFF;
-	}
-	else if (get_map(x, y) == 4)
-	{
-		e->c.r = 0x0f;
-		e->c.g = 0x0f;
-		e->c.b = 0x0f;
-	}
-	e->p.wallsens == 1 ? change_wall_color(e) : 1;*/
+	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
 }
+
 int			give_color(double rdirxy, int t)
 {
 	if (t == 1)

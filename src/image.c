@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/17 17:38:43 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 19:57:16 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend)
 {
 		e->c.r = 0x87cefa;
 		verline(x,0, drawstart, e);
-		e->c.r = 0x8fbc8f;
+		e->c.r = 0x330000;
 		verline(x,drawend, WIN_Y, e);
 }
 
