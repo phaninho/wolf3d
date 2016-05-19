@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 14:36:24 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 20:02:11 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIN_X 1000
 # define WIN_Y 1000 / 16 * 9
-# define MAP_X 8
+# define MAP_X 22
 # define MAP_Y 8
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
