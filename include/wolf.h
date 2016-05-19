@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/16 19:46:24 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 14:36:24 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ int				key_hook(int keycode, t_env *e);
 void			wall_dist(t_env *e);
 int				image_put_pixel(t_env *e, int x, int y, unsigned long color);
 void			verline(int x, int drawstart, int drawend, t_env *e);
-void			wall_h(t_env *e);
-void			wall_color(t_env *e, int x, int y);
+void			wall_h(t_env *env);
+void			wall_color(t_env *e, int x, int y, int ret);
 void			move_init(t_env *e, int key);
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
 int				destroy_win(t_env *e);

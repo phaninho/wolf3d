@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/13 20:14:42 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 14:53:43 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int			destroy_win(t_env *e)
 {
 	(void)e;
 	exit(1);
+	return (0);
 }
 
 static void		clear_image(t_env *e)

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/14 22:19:27 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/17 19:12:55 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 12:09:14 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void		texture_coordy(t_env *e, int texx)
 	int		y;
 	int		d;
 	int		texy;
-
 	y = e->p.drawstart;
 	while (y < e->p.drawend)
 	{

@@ -6,7 +6,7 @@
 /*   By: qmuntada <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 16:34:31 by qmuntada          #+#    #+#             */
-/*   Updated: 2016/05/17 17:09:58 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/19 13:03:02 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	init_texture(t_env *e)
 	while (++i < 63)
 	{
 		e->tex[i].i = mlx_xpm_file_to_image(e->mlx, e->file[i],
-								&e->tex[i].width, &e->tex[i].height);
+				&e->tex[i].width, &e->tex[i].height);
 		if (e->tex[i].i == NULL)
 			texture_error();
 		e->tex[i].data = mlx_get_data_addr(e->tex[i].i,
