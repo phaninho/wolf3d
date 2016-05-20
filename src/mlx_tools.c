@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 14:02:45 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 18:36:28 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 19:48:31 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int			key_hook(int kc, t_env *e)
 	if (kc == 13 || kc == 1 || kc == 0 || kc == 2)
 		move_init(e, kc);
 	if (kc == 256 )
-		e->p.speed = -0.08;
+		e->p.speed = -0.15;
 	if (kc == 259)
 		e->p.speed = 0.8;
 	if (kc == 53)
