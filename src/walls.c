@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 18:03:56 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 11:48:42 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 18:57:04 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,14 @@ void		change_wall_color(t_env *e)
 
 void		wall_color(t_env *e, int x, int y, int ret)
 {
-(void)x;
-(void)y;
 	if (ret == 1)
-		e->c.r = 0x330000;
+		e->c.r = 0x330000 / get_map(x, y);
 	if (ret == 2)
-		e->c.r = 0x000066;
+		e->c.r = 0x000066 / get_map(x, y) * 2;
 	if (ret == 3)
-		e->c.r = 0xcccc66;
+		e->c.r = 0xcccc66 * get_map(x, y) / 2;
 	if (ret == 4)
-		e->c.r = 0x663300;
+		e->c.r = 0x663300 * get_map(x, y) * 2;
 //	texture_coordxy(e, x, y);
 	verline(e->p.x, e->p.drawstart, e->p.drawend, e);
 }

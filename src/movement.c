@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 15:16:31 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 15:29:31 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 18:27:26 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,27 @@ void		rotation(t_env *e, int key, double rotspd)
 
 void		move_init(t_env *e, int keycode)
 {
-	double		movespeed;
+	double		mspeed;
 	double		rotspeed;
 
-	movespeed = 0.2;
+	mspeed = 0.2 + e->p.speed;
 	rotspeed = 0.15;
 	if (keycode == 13)
 	{
-		if (!(get_map((int)(e->p.posx + e->p.dirx * movespeed), (int)e->p.posy)))
-			e->p.posx += e->p.dirx * movespeed;
-		if (!(get_map((int)e->p.posx, (int)(e->p.posy + e->p.diry * movespeed))))
-			e->p.posy += e->p.diry * movespeed;
+		if (!(get_map((int)(e->p.posx + e->p.dirx * mspeed), (int)e->p.posy)))
+			e->p.posx += e->p.dirx * mspeed;
+		if (!(get_map((int)e->p.posx, (int)(e->p.posy + e->p.diry * mspeed))))
+			e->p.posy += e->p.diry * mspeed;
 	}
 	else if (keycode == 1)
 	{
-		if (!(get_map((int)(e->p.posx - e->p.dirx * movespeed), (int)e->p.posy)))
-			e->p.posx -= e->p.dirx * movespeed;
-		if (!(get_map((int)e->p.posx, (int)(e->p.posy - e->p.diry * movespeed))))
-			e->p.posy -= e->p.diry * movespeed;
+		if (!(get_map((int)(e->p.posx - e->p.dirx * mspeed), (int)e->p.posy)))
+			e->p.posx -= e->p.dirx * mspeed;
+		if (!(get_map((int)e->p.posx, (int)(e->p.posy - e->p.diry * mspeed))))
+			e->p.posy -= e->p.diry * mspeed;
 	}
 	if (e->p.posx > 19 && e->p.posx < 20 && e->p.posy > 21.3 && e->p.posy < 22)
 		teleport(e);
 	if (keycode == 0 || keycode == 2)
 		rotation(e, keycode, rotspeed);
-	expose_hook(e);
 }

@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 15:55:15 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 18:36:49 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct			s_pos
 	int			texnum;
 	int			drawstart;
 	int			drawend;
+	double		speed;
 }						t_pos;
 
 typedef struct			s_env
@@ -99,10 +100,10 @@ void			wall_h(t_env *env);
 void			wall_color(t_env *e, int x, int y, int ret);
 void			move_init(t_env *e, int key);
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend);
-int				destroy_win(t_env *e);
 void			init_texture(t_env *e);
 void			texture_error(void);
 void			texture_coordxy(t_env *e, int x, int y);
 void			put_visor(t_env *e);
+int				key_hook2(int k, t_env *e);
 
 #endif
