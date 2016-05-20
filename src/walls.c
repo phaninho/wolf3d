@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 18:03:56 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 19:58:40 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 11:48:42 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		wall_color(t_env *e, int x, int y, int ret)
 (void)x;
 (void)y;
 	if (ret == 1)
-		e->c.r = 0x006600;
+		e->c.r = 0x330000;
 	if (ret == 2)
 		e->c.r = 0x000066;
 	if (ret == 3)

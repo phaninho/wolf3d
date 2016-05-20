@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 20:02:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 15:55:15 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define WIN_X 1000
 # define WIN_Y 1000 / 16 * 9
 # define MAP_X 22
-# define MAP_Y 8
+# define MAP_Y 23
 # define TEXWIDTH 64
 # define TEXHEIGHT 64
 # define DESTROYNOTIFY 17
@@ -103,5 +103,6 @@ int				destroy_win(t_env *e);
 void			init_texture(t_env *e);
 void			texture_error(void);
 void			texture_coordxy(t_env *e, int x, int y);
+void			put_visor(t_env *e);
 
 #endif

@@ -6,18 +6,26 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/19 19:57:16 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/20 15:57:54 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 #include <stdio.h>
 
+void			put_visor(t_env *e)
+{
+	mlx_string_put(e->mlx, e->win, (WIN_X / 2) - 9, (WIN_Y / 2), 0xffffff, ".");
+	mlx_string_put(e->mlx, e->win, (WIN_X / 2) + 9, (WIN_Y / 2), 0xffffff, ".");
+	mlx_string_put(e->mlx, e->win, (WIN_X / 2), (WIN_Y / 2) - 9, 0xffffff, ".");
+	mlx_string_put(e->mlx, e->win, (WIN_X / 2), (WIN_Y / 2) + 9, 0xffffff, ".");
+}
+
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend)
 {
 		e->c.r = 0x87cefa;
 		verline(x,0, drawstart, e);
-		e->c.r = 0x330000;
+		e->c.r = 0x006600;
 		verline(x,drawend, WIN_Y, e);
 }
 
