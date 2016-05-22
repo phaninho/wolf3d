@@ -53,7 +53,7 @@ void		call_f(t_env *e)
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, WIN_X, WIN_Y, "WOLF42");
 	e->img.i = mlx_new_image(e->mlx, WIN_X, WIN_Y);
-	init_texture(e);
+	//init_texture(e);
 	mlx_expose_hook(e->win, expose_hook, e);
 	mlx_hook(e->win, 2, 1L << 0, key_hook, e);
 	mlx_hook(e->win, 3, 1L << 1, key_hook2, e);
