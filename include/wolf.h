@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 18:36:49 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 13:00:38 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ typedef struct			s_image
 typedef struct			s_col
 {
 	unsigned long	r;
-	unsigned long	g;
-	unsigned long	b;
 }						t_col;
 
 typedef struct			s_pos
@@ -76,6 +74,9 @@ typedef struct			s_pos
 	int			drawstart;
 	int			drawend;
 	double		speed;
+	double		drunk;
+	int			mini;
+	int			step;
 }						t_pos;
 
 typedef struct			s_env

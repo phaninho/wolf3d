@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:55:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 18:58:29 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 12:58:39 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,15 @@ int			destroy_win(t_env *e)
 	return (0);
 }
 
+void		write_instructions(void)
+{
+	ft_putendl("movement : w,s,a,d");
+	ft_putendl("small mode on/off: e/r");
+	ft_putendl("drunk mode on/off: f/g");
+	ft_putendl("run: command");
+	ft_putendl("slow walk : contol");
+}
+
 void		call_f(t_env *e)
 {
 	e->mlx = mlx_init();
@@ -60,6 +69,7 @@ void		call_f(t_env *e)
 	mlx_hook(e->win, DESTROYNOTIFY, STRUCT_NOT_MASK, destroy_win, e);
 	e->img.data = mlx_get_data_addr(e->img.i, &(e->img.bpp), &(e->img.szline),
 			&(e->img.endian));
+	write_instructions();
 	mlx_loop(e->mlx);
 }
 

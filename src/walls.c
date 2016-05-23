@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 18:03:56 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 18:57:04 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 12:45:01 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ int			give_color(double rdirxy, int t)
 	return (4);
 }
 
+void		mini_mode(t_env *e)
+{
+	if (e->p.mini == 0)
+		e->p.drawstart = -e->p.wall_high / 2 + WIN_Y / 2 + e->p.drunk;
+	else
+		e->p.drawstart = -e->p.wall_high * 3 + WIN_Y / 2 + e->p.drunk;
+}
 void		wall_h(t_env *e)
 {
 	int ret;
@@ -76,8 +83,8 @@ void		wall_h(t_env *e)
 	}
 	if (e->p.wall_len <= 0.100000)
 		e->p.wall_len += 0.1;
-		e->p.wall_high = abs((int)(WIN_Y / e->p.wall_len));
-	e->p.drawstart = -e->p.wall_high / 2 + WIN_Y / 2;
+	e->p.wall_high = abs((int)(WIN_Y / e->p.wall_len));
+	mini_mode(e);
 	if (e->p.drawstart < 0)
 		e->p.drawstart = 0;
 	e->p.drawend = e->p.wall_high / 2 + WIN_Y / 2;

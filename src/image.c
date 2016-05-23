@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 17:27:54 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/20 15:57:54 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 13:12:13 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void			put_visor(t_env *e)
 	mlx_string_put(e->mlx, e->win, (WIN_X / 2) + 9, (WIN_Y / 2), 0xffffff, ".");
 	mlx_string_put(e->mlx, e->win, (WIN_X / 2), (WIN_Y / 2) - 9, 0xffffff, ".");
 	mlx_string_put(e->mlx, e->win, (WIN_X / 2), (WIN_Y / 2) + 9, 0xffffff, ".");
+	mlx_string_put(e->mlx, e->win, 150, 17, 0xff00ff, ft_itoa(e->p.step / 3));
+	mlx_string_put(e->mlx, e->win, 10, 17, 0x0000ff, "steps score : ");
 }
 
 void			draw_sky_and_floor(t_env *e, int x, int drawstart, int drawend)
