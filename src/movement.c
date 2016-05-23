@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/13 15:16:31 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/23 13:05:48 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 16:47:20 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 #include <stdio.h>
 void		teleport(t_env *e)
 {
-	e->p.posx = 5.5;
-	e->p.posy = 1.5;
+	if (e->p.posx >= 19 && e->p.posx < 19.45 && e->p.posy > 21.1 &&
+			e->p.posy < 21.9 && e->p.step > 100 * 3)
+	{
+		e->p.posx = 5.5;
+		e->p.posy = 1.5;
+	}
 }
 
 void		rotation(t_env *e, int key, double rotspd)
@@ -43,29 +47,26 @@ void		rotation(t_env *e, int key, double rotspd)
 
 void		move_init(t_env *e, int keycode)
 {
-	double		mspeed;
-	double		rotspeed;
-
-	mspeed = 0.14 + e->p.speed;
-	rotspeed = 0.1;
+	e->msd = 0.14 + e->p.speed;
+	e->rotsd = 0.1;
 	if (keycode == 13)
 	{
-		if (!(get_map((int)(e->p.posx + e->p.dirx * mspeed), (int)e->p.posy)))
-			e->p.posx += e->p.dirx * mspeed;
-		if (!(get_map((int)e->p.posx, (int)(e->p.posy + e->p.diry * mspeed))))
-			e->p.posy += e->p.diry * mspeed;
+		if (!(get_map((int)(e->p.posx + e->p.dirx * e->msd), (int)e->p.posy)) ||
+			get_map((int)(e->p.posx + e->p.dirx * e->msd), (int)e->p.posy) > 8)
+			e->p.posx += e->p.dirx * e->msd;
+		if (!(get_map((int)e->p.posx, (int)(e->p.posy + e->p.diry * e->msd))))
+			e->p.posy += e->p.diry * e->msd;
 		e->p.step++;
 	}
 	else if (keycode == 1)
 	{
-		if (!(get_map((int)(e->p.posx - e->p.dirx * mspeed), (int)e->p.posy)))
-			e->p.posx -= e->p.dirx * mspeed;
-		if (!(get_map((int)e->p.posx, (int)(e->p.posy - e->p.diry * mspeed))))
-			e->p.posy -= e->p.diry * mspeed;
+		if (!(get_map((int)(e->p.posx - e->p.dirx * e->msd), (int)e->p.posy)))
+			e->p.posx -= e->p.dirx * e->msd;
+		if (!(get_map((int)e->p.posx, (int)(e->p.posy - e->p.diry * e->msd))))
+			e->p.posy -= e->p.diry * e->msd;
 		e->p.step++;
 	}
 	if (keycode == 0 || keycode == 2)
-		rotation(e, keycode, rotspeed);
-	if (e->p.posx > 19 && e->p.posx < 20 && e->p.posy > 21.3 && e->p.posy < 22)
+		rotation(e, keycode, e->rotsd);
 		teleport(e);
 }
