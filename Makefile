@@ -6,7 +6,7 @@
 #    By: stmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/03/04 14:21:39 by stmartin          #+#    #+#              #
-#    Updated: 2016/05/15 00:13:25 by stmartin         ###   ########.fr        #
+#    Updated: 2016/05/25 13:15:07 by stmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ LIB_PATH = ./libft/ ./minilibx_macos/
 FRAMEWORK = -framework OpenGL -framework Appkit
 
 SRC_NAME = main.c positions.c mlx_tools.c walls.c image.c movement.c \
-		   texture.c error.c calcul_for_texture.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 LIB_NAME = -lft -lmlx
@@ -62,6 +61,9 @@ re: fclean
 	@$(MAKE) all
 
 norme :
-	norminette ./libft/*
-	norminette ./src/*
-	norminette ./include/*
+	@echo "\033[37;44m norme libft \033[0m"
+	@norminette ./libft/*[ch]
+	@echo "\033[37;44m norme src directory \033[0m"
+	@norminette ./src/*.c
+	@echo "\033[37;44m norme include directory \033[0m"
+	@norminette ./include/*.h

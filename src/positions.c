@@ -6,12 +6,12 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/12 13:51:37 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/23 12:20:26 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 18:18:25 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-#include <stdio.h>
+
 void		move_pos(t_env *e)
 {
 	while (e->p.touch == 0)

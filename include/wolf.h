@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:57:08 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/23 17:28:11 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/25 13:39:58 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ typedef struct			s_pos
 	int			is_drunk;
 	int			mini;
 	int			mini_len;
-	int			step;
+	int			sp;
 }						t_pos;
 
 typedef struct			s_env
