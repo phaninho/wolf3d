@@ -6,7 +6,7 @@
 /*   By: stmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 18:55:33 by stmartin          #+#    #+#             */
-/*   Updated: 2016/05/25 17:33:02 by stmartin         ###   ########.fr       */
+/*   Updated: 2016/05/23 18:59:16 by stmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ void		call_f(t_env *e)
 
 int			main(void)
 {
-	t_env	e;
+	static t_env	e;
 
-	ft_memset(&e, 0, sizeof(t_env));
 	e.p.posx = 19.7;
 	e.p.posy = 21.5;
 	e.p.dirx = -1;
